@@ -1,0 +1,41 @@
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #04050B;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.wrapper {
+  height: 340px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.wrapper .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 64px;
+  text-align: center;
+  color: grey;
+  font-family: "Open Sans Condensed", Arial;
+}
+.wrapper .text i {
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  font-size: 24px;
+  text-align: center;
+}
