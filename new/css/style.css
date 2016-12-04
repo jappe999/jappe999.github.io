@@ -186,14 +186,16 @@ main section .horizontal-align li:hover {
   box-shadow:0 4px 12px #aaa;
 }
 main section .horizontal-align li .fa {
-  height:30px;
-  width:30px;
-  margin:0 !important;
-  padding:32px;
+  height:96px;
+  width:96px;
+  margin:0 auto;
   box-shadow:0 4px 6px #aaa;
   border-radius:50%;
   color:white;
   font-size:48px;
+  align-items:center;
+  display:flex;
+  justify-content:center;
 }
 main section .horizontal-align li .fa-codepen {
   background:#000;
@@ -203,11 +205,6 @@ main section .horizontal-align li .fa-twitter {
 }
 main section .horizontal-align li .fa-github {
   background:#333;
-}
-main section .horizontal-align li .fa::before {
-  position:relative;
-  top:-7px;
-  left:-9px;
 }
 
 #menu {
