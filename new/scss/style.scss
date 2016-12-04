@@ -1,0 +1,267 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+@mixin background-intro($r,$g,$b,$t,$u) {
+	background:-webkit-linear-gradient(rgba($r,$g,$b,$t), rgba($r,$g,$b,$t)),url($u);
+	background:-moz-linear-gradient(rgba($r,$g,$b,$t), rgba($r,$g,$b,$t)),url($u);
+	background:-o-linear-gradient(rgba($r,$g,$b,$t), rgba($r,$g,$b,$t)),url($u);
+	background:linear-gradient(rgba($r,$g,$b,$t), rgba($r,$g,$b,$t)),url($u);
+}
+
+//colors
+$green:rgba(39, 174, 96,.9);
+$dark-grey:rgb(30, 30, 30);
+
+$menuWidth:65%;
+$menuSpeed:.2s;
+
+a {
+	color:$green;
+	text-decoration:none;
+	font-weight:bold;
+	position:relative;
+	display:block;
+	padding:5px 10px;
+	margin:0 auto;
+	text-align:center;
+	
+	img {
+		vertical-align:middle
+	}
+
+	&:hover::after {
+		width:100%;
+		left:0
+	}
+
+	&::after {
+		content:"";
+		height:1px;
+		width:0;
+		position:absolute;
+		left:50%;
+		bottom:0;
+		background-color:currentColor;
+		transition:.2s
+	}
+}
+
+.horizontal-align {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+
+	li {
+		display:inline-block;
+	}
+}
+
+body {
+	margin:0;
+	background:#eee;
+	font-family:Open Sans;
+	overflow-x: hidden;
+	
+	&::after {
+		content:"";
+		height:calc(100% - 80px);
+		width:100%;
+		display:none;
+		position:absolute;
+		bottom:0;
+		left:-100%;
+		background:rgba(30,30,30,.6);
+		opacity:0;
+		transition:$menuSpeed
+	}
+	
+	&.active::after {
+		left:-$menuWidth;
+		opacity:1
+	}
+}
+
+body>header,body>main,body>footer {background:white;box-shadow:0 4px 10px #aaa;}
+body>header,body>main,#menu,body>footer {transition:$menuSpeed}
+body>header,
+body>footer {
+	nav {
+		>* {display:inline-block}
+		
+		&.has-img {
+			img {
+				position:relative;
+				top:-15px;
+			}
+			ul {
+				position:relative;
+				top:-10px;
+			}
+		}
+		
+		ul {
+			li {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+body>header {
+	height:40px;
+	width:80%;
+	position:relative;
+	top:0;
+	left:0;
+	background:transparent;
+	padding:20px 10%;
+	background: white;
+	
+	nav.has-img {>a:hover::after {width:0}}
+	
+	#hamburger {
+		$width:50px;
+		$height:2px;
+		$totalHeight:20px+$height*2;
+		width:$width;
+		position:absolute;
+		top:50%;
+		right:10%;
+		margin-top:-$totalHeight;
+		display:none;
+		padding:$totalHeight 5px;
+		
+		&::before,
+		div,
+		&::after {content:"";height:$height;width:$width;position:absolute;left:0;background:$dark-grey;transition:.2s}
+		
+		&::before {top:$totalHeight/2}
+		&::after {top:$totalHeight+$totalHeight/2;}
+		
+		&.active {			
+			&::before {transform:rotate(-135deg);top:50%}
+			div {width:0;left:50%}
+			&::after {transform:rotate(-45deg);top:50%}
+		}
+	}
+}
+
+main {
+	min-height:300px;
+	width:90%;
+	position:relative;
+	top:20px;
+	left:5%;
+	padding-bottom:20px;
+	
+	#intro {
+		height:300px;
+		width:90%;
+		position:relative;
+		padding:5%;
+		$tr:.3; //transparency
+		@include background-intro(192, 57, 43,$tr,'http://assets.fodors.com/destinations/1128/skyline-manhattan-new-york-city-new-york-usa_main.jpg');
+		background-size:cover;
+		color:white;
+		text-shadow:1px 1px 0 black;
+	}
+	
+	section {
+		width:90%;
+		padding:1% 5%;
+		margin-bottom:64px;
+		
+		h1 {
+			font-size:40px;
+			border-bottom:thin $green dashed;
+		}
+		
+		.horizontal-align {
+			width:100%;
+			display:-webkit-flex;
+			display:flex;
+    	-webkit-flex-wrap:wrap;
+    	flex-wrap:wrap;
+			-webkit-justify-content:space-around;
+			justify-content:space-around;
+			
+			li {
+				width:150px;
+				padding:20px 5%;
+				text-align:center;
+				
+				&:hover {box-shadow:0 4px 10px #aaa}
+				
+				.fa {
+					height:30px;
+					width:30px;
+					margin:0 !important;
+					padding:32px;
+					box-shadow:0 4px 6px #aaa;
+					//text-shadow:0 0 2px $dark-grey;
+					border-radius:50%;
+					color:white;
+					font-size:48px;
+					
+					&-code{background:#222}
+					&-users{background:$green}
+					&-heart{background:#B8312F}
+					
+					&::before {
+						position:relative;
+						top:-7px;
+						left:-9px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#menu {
+	height:100%;
+	width:$menuWidth;
+	position:absolute;
+	top:0;
+	right:-$menuWidth;
+	background:$dark-grey;
+	
+	nav {
+		height:100%;
+		width:100%;
+		
+		ul {
+			width:100%;
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			
+			li {
+				height:40px;
+				width:80%;
+				padding:10%;
+			}
+		}
+	}
+}
+
+footer {
+	width: 90%;
+	padding: 10px 5%;
+	position: relative;
+	top:40px;
+}
+
+@media screen and(max-width:500px) {
+	body{position:absolute;&::after{display:block}}
+	body.active{overflow:hidden}
+	body>header nav ul {display:none !important}
+	body>header nav #hamburger {display:block}
+	body>header.active,
+	body>main.active,
+	body>footer.active {
+		left:-$menuWidth;
+	}
+	#menu.active {
+		right:0;
+	}
+}

@@ -1,0 +1,273 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+a {
+  color: rgba(39, 174, 96, 0.9);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+a img {
+  vertical-align: middle;
+}
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+a::after {
+  content: "";
+  height: 1px;
+  width: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background-color: currentColor;
+  transition: 0.2s;
+}
+
+.horizontal-align {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.horizontal-align li {
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+  background: #eee;
+  font-family: Open Sans;
+  overflow-x: hidden;
+}
+body::after {
+  content: "";
+  height: calc(100% - 80px);
+  width: 100%;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  background: rgba(30, 30, 30, 0.6);
+  opacity: 0;
+  transition: 0.2s;
+}
+body.active::after {
+  left: -65%;
+  opacity: 1;
+}
+
+body > header, body > main, body > footer {
+  background: white;
+  box-shadow: 0 4px 10px #aaa;
+}
+
+body > header, body > main, #menu, body > footer {
+  transition: 0.2s;
+}
+
+body > header nav > *,
+body > footer nav > * {
+  display: inline-block;
+}
+body > header nav.has-img img,
+body > footer nav.has-img img {
+  position: relative;
+  top: -15px;
+}
+body > header nav.has-img ul,
+body > footer nav.has-img ul {
+  position: relative;
+  top: -10px;
+}
+body > header nav ul li,
+body > footer nav ul li {
+  margin-left: 10px;
+}
+
+body > header {
+  height: 40px;
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding: 20px 10%;
+  background: white;
+}
+body > header nav.has-img > a:hover::after {
+  width: 0;
+}
+body > header #hamburger {
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  margin-top: -24px;
+  display: none;
+  padding: 24px 5px;
+}
+body > header #hamburger::before,
+body > header #hamburger div, body > header #hamburger::after {
+  content: "";
+  height: 2px;
+  width: 50px;
+  position: absolute;
+  left: 0;
+  background: #1e1e1e;
+  transition: .2s;
+}
+body > header #hamburger::before {
+  top: 12px;
+}
+body > header #hamburger::after {
+  top: 36px;
+}
+body > header #hamburger.active::before {
+  transform: rotate(-135deg);
+  top: 50%;
+}
+body > header #hamburger.active div {
+  width: 0;
+  left: 50%;
+}
+body > header #hamburger.active::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+main {
+  min-height: 300px;
+  width: 90%;
+  position: relative;
+  top: 20px;
+  left: 5%;
+  padding-bottom: 20px;
+}
+main #intro {
+  height: 300px;
+  width: 90%;
+  position: relative;
+  padding: 5%;
+  background: -webkit-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("http://assets.fodors.com/destinations/1128/skyline-manhattan-new-york-city-new-york-usa_main.jpg");
+  background: -moz-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("http://assets.fodors.com/destinations/1128/skyline-manhattan-new-york-city-new-york-usa_main.jpg");
+  background: -o-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("http://assets.fodors.com/destinations/1128/skyline-manhattan-new-york-city-new-york-usa_main.jpg");
+  background: linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("http://assets.fodors.com/destinations/1128/skyline-manhattan-new-york-city-new-york-usa_main.jpg");
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 0 black;
+}
+main section {
+  width: 90%;
+  padding: 1% 5%;
+  margin-bottom: 64px;
+}
+main section h1 {
+  font-size: 40px;
+  border-bottom: thin rgba(39, 174, 96, 0.9) dashed;
+}
+main section .horizontal-align {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+main section .horizontal-align li {
+  width: 150px;
+  padding: 20px 5%;
+  text-align: center;
+}
+main section .horizontal-align li:hover {
+  box-shadow: 0 4px 10px #aaa;
+}
+main section .horizontal-align li .fa {
+  height: 30px;
+  width: 30px;
+  margin: 0 !important;
+  padding: 32px;
+  box-shadow: 0 4px 6px #aaa;
+  border-radius: 50%;
+  color: white;
+  font-size: 48px;
+}
+main section .horizontal-align li .fa-code {
+  background: #222;
+}
+main section .horizontal-align li .fa-users {
+  background: rgba(39, 174, 96, 0.9);
+}
+main section .horizontal-align li .fa-heart {
+  background: #B8312F;
+}
+main section .horizontal-align li .fa::before {
+  position: relative;
+  top: -7px;
+  left: -9px;
+}
+
+#menu {
+  height: 100%;
+  width: 65%;
+  position: absolute;
+  top: 0;
+  right: -65%;
+  background: #1e1e1e;
+}
+#menu nav {
+  height: 100%;
+  width: 100%;
+}
+#menu nav ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#menu nav ul li {
+  height: 40px;
+  width: 80%;
+  padding: 10%;
+}
+
+footer {
+  width: 90%;
+  padding: 10px 5%;
+  position: relative;
+  top: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    position: absolute;
+  }
+  body::after {
+    display: block;
+  }
+
+  body.active {
+    overflow: hidden;
+  }
+
+  body > header nav ul {
+    display: none !important;
+  }
+
+  body > header nav #hamburger {
+    display: block;
+  }
+
+  body > header.active,
+  body > main.active,
+  body > footer.active {
+    left: -65%;
+  }
+
+  #menu.active {
+    right: 0;
+  }
+}
