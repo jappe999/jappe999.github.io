@@ -232,6 +232,12 @@ footer {
   top:40px;
 }
 
+@media screen and (max-width:600px) {
+  #intro .big {
+    font-size:10px;
+  }
+}
+
 @media screen and (max-width:500px) {
   body::after {
     display:block;
@@ -257,5 +263,26 @@ footer {
 
   #menu.active {
     right:0;
+  }
+}
+
+@media screen and (max-width:470px) {
+  #intro .big {
+    height:200px;
+    font-size:10px
+  }
+}
+
+@media screen and (max-width:370px) {
+  #intro .big {
+    height:160px;
+    font-size:8px
+  }
+}
+
+@media screen and (max-width:370px) {
+  #intro .big {
+    height:120px;
+    font-size:6px
   }
 }
