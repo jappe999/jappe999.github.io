@@ -273,7 +273,7 @@ footer {
   }
 }
 
-@media screen and (max-width:370px) {
+@media screen and (max-width:420px) {
   #intro .big {
     height:160px;
     font-size:14px
