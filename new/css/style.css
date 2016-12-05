@@ -267,22 +267,28 @@ footer {
 }
 
 @media screen and (max-width:520px) {
-  #intro .big {
+  #intro {
     height:200px;
+  }
+  .big {
     font-size:18px
   }
 }
 
 @media screen and (max-width:420px) {
-  #intro .big {
+  #intro {
     height:160px;
+  }
+  .big {
     font-size:14px
   }
 }
 
 @media screen and (max-width:370px) {
-  #intro .big {
-    height:140px;
+  #intro {
+    height:100px;
+  }
+  .big {
     font-size:12px
   }
 }
