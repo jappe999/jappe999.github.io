@@ -62,7 +62,7 @@ body.active::after {
   height:100%;
   width:100%;
   position:relative;
-  overflow-x:none;
+  overflow-x:hidden;
 }
 
 .app > header, .app > main, .app > footer {
