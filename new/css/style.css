@@ -65,30 +65,30 @@ body.active::after {
   overflow-x:hidden;
 }
 
-.app > header, .app > main, .app > footer {
+.app header, .app main, .app footer {
   background:white;
   box-shadow:0 4px 10px #aaa;
 }
 
-.app > header, .app > main, #menu, .app > footer {
+.app header, .app main, #menu, .app footer {
   transition:0.2s;
 }
 
-.app > header nav > *,
-.app > footer nav > * {
+.app header nav > *,
+.app footer nav > * {
   display:inline-block;
 }
-.app > header nav.has-img ul,
-.app > footer nav.has-img ul {
+.app header nav.has-img ul,
+.app footer nav.has-img ul {
   position:relative;
   top:-4px;
 }
-.app > header nav ul li,
-.app > footer nav ul li {
+.app header nav ul li,
+.app footer nav ul li {
   margin-left:10px;
 }
 
-.app > header {
+.app header {
   height:40px;
   width:80%;
   position:relative;
@@ -98,10 +98,10 @@ body.active::after {
   padding:20px 10%;
   background:white;
 }
-.app > header nav.has-img > a:hover::after {
+.app header nav.has-img > a:hover::after {
   width:0;
 }
-.app > header #hamburger {
+.app header #hamburger {
   width:50px;
   position:absolute;
   top:50%;
@@ -110,8 +110,8 @@ body.active::after {
   display:none;
   padding:24px 5px;
 }
-.app > header #hamburger::before,
-.app > header #hamburger div, .app > header #hamburger::after {
+.app header #hamburger::before,
+.app header #hamburger div, .app header #hamburger::after {
   content:"";
   height:2px;
   width:50px;
@@ -120,21 +120,21 @@ body.active::after {
   background:#1e1e1e;
   transition:.2s;
 }
-.app > header #hamburger::before {
+.app header #hamburger::before {
   top:12px;
 }
-.app > header #hamburger::after {
+.app header #hamburger::after {
   top:36px;
 }
-.app > header #hamburger.active::before {
+.app header #hamburger.active::before {
   transform:rotate(-135deg);
   top:50%;
 }
-.app > header #hamburger.active div {
+.app header #hamburger.active div {
   width:0;
   left:50%;
 }
-.app > header #hamburger.active::after {
+.app header #hamburger.active::after {
   transform:rotate(-45deg);
   top:50%;
 }
@@ -254,17 +254,17 @@ footer {
     overflow:hidden;
   }
 
-  .app > header nav ul {
+  .app header nav ul {
     display:none !important;
   }
 
-  .app > header nav #hamburger {
+  .app header nav #hamburger {
     display:block;
   }
 
-  .app > header.active,
-  .app > main.active,
-  .app > footer.active {
+  .app header.active,
+  .app main.active,
+  .app footer.active {
     left:-65%;
   }
 
