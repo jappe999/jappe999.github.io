@@ -35,7 +35,12 @@ a::after {
   display:inline-block;
 }
 
-body {
+html, body {
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
   margin:0;
   background:#eee;
   font-family:Open Sans;
@@ -169,6 +174,30 @@ main section h1 {
   font-size:40px;
   border-bottom:thin rgba(39, 174, 96, 0.9) dashed;
 }
+main section blockquote {
+  width:95%;
+  max-width:1000px;
+  margin:0;
+  padding:10px 2.5%;
+  font-size:32px;
+  background:#EEE;
+  box-shadow:0 0 4px #aaa inset;
+}
+main section blockquote::before {
+  content:open-quote;
+  position:relative;
+  top:15%;
+  left:0;
+  font-size:36px;
+}
+main section blockquote::after {
+  content:close-quote;
+  position:relative;
+  top:15%;
+  left:0;
+  font-size:36px;
+}
+
 main section .horizontal-align {
   width:100%;
   display:-webkit-flex;
@@ -234,9 +263,12 @@ main section .horizontal-align li .fa-github {
 
 footer {
   width:90%;
-  padding:10px 5%;
+  padding:4px 5% 10px;
   position:relative;
   top:40px;
+}
+footer li {
+  margin-top:6px;
 }
 
 @media screen and (max-width:600px) {
