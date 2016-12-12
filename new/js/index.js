@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var actives = 'body,body>header,#hamburger,body>main,#menu,body>footer';	
+	var actives = 'body,.app header,#hamburger,.app main,#menu,.app footer';	
 	$('#hamburger').on('click', function() {
 		if($('#hamburger').hasClass('active'))
 			$(actives).removeClass('active');
