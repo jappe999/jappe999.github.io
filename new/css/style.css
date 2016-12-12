@@ -239,10 +239,13 @@ footer {
   top:40px;
 }
 
-@media screen and (max-width:500px) {
-  body {
-    position:absolute;
+@media screen and (max-width:600px) {
+  #intro .big {
+    font-size:22px;
   }
+}
+
+@media screen and (max-width:500px) {
   body::after {
     display:block;
   }
@@ -267,5 +270,32 @@ footer {
 
   #menu.active {
     right:0;
+  }
+}
+
+@media screen and (max-width:520px) {
+  main #intro {
+    height:200px;
+  }
+  #intro .big {
+    font-size:18px
+  }
+}
+
+@media screen and (max-width:420px) {
+  main #intro {
+    height:160px;
+  }
+  #intro .big {
+    font-size:14px
+  }
+}
+
+@media screen and (max-width:370px) {
+  main #intro {
+    height:100px;
+  }
+  #intro .big {
+    font-size:12px
   }
 }
