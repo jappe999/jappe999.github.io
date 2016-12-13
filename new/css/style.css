@@ -157,10 +157,10 @@ main #intro {
   width:90%;
   position:relative;
   padding:5%;
-  background:-webkit-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/bg.jpg");
-  background:-moz-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/bg.jpg");
-  background:-o-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/bg.jpg");
-  background:linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/bg.jpg");
+  background:-webkit-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");
+  background:-moz-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");
+  background:-o-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");
+  background:linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");
   background-size:cover;
   color:white;
   text-shadow:1px 1px 0 black;
@@ -215,17 +215,24 @@ main section .horizontal-align li {
 main section .horizontal-align li:hover {
   box-shadow:0 4px 12px #aaa;
 }
-main section .horizontal-align li .fa {
-  height:96px;
-  width:96px;
+main section .horizontal-align li .icon {
   margin:0 auto;
   box-shadow:0 4px 6px #aaa;
-  border-radius:50%;
   color:white;
   font-size:48px;
   align-items:center;
   display:flex;
   justify-content:center;
+}
+main section .horizontal-align li img.icon {
+  margin-top:-20px;
+  margin-left:-50%;
+  width:200%;
+}
+main section .horizontal-align li .icon.fa {
+  height:96px;
+  width:96px;
+  border-radius:50%;
 }
 main section .horizontal-align li .fa-codepen {
   background:#000;
@@ -235,6 +242,10 @@ main section .horizontal-align li .fa-twitter {
 }
 main section .horizontal-align li .fa-github {
   background:#333;
+}
+main section .horizontal-align li p {
+  width:150%;
+  margin-left:-25%;
 }
 
 #menu {
