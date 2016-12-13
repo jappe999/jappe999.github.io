@@ -163,6 +163,7 @@ main #intro {
   background:-o-linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");
   background:linear-gradient(rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.3)), url("/img/cp_mac.jpg");*/
   background-size:cover;
+  background-position:center;
   color:white;
   text-shadow:1px 1px 0 black;
 }
