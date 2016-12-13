@@ -1,0 +1,96 @@
+body {
+    min-height:100%;
+    width:100%;
+    margin:0;
+    background:#04050B;
+}
+
+canvas {
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.wrapper {
+    height:340px;
+    width:448px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.wrapper .text {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    font-size:64px;
+    text-align:center;
+    color:grey;
+    font-family:"Open Sans Condensed", Arial;
+}
+.wrapper .text i {
+    position:absolute;
+    top:78px;
+    right:6px;
+    font-size:24px;
+    text-align:center;
+}
+.wrapper .icons {
+    width:300px;
+    height:48px;
+    position:absolute;
+    top:148px;
+    left:0;
+    right:0;
+    margin:auto;
+    font-size:36px;
+    display:flex;
+    justify-content:space-around;
+}
+.wrapper .icons .icon {
+    height:36px;
+    width:36px;
+    position:relative;
+    padding:4px 6px 8px;
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    border-radius:4px;
+    box-shadow:0 0 1px #fff;
+}
+.wrapper .icons .icon::before {
+    content:"";
+    height:0;
+    width:0;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    padding:20px;
+    border:2px #ddd solid;
+    border-radius:7px;
+    transition:.2s;
+    z-index:-1;
+}
+.wrapper .icons .icon:hover {
+    box-shadow:0 0 0 #000
+}
+.wrapper .icons .icon:hover::before {
+    left:-6px;
+    padding:28px;
+}
+.twitter {
+    background:#55acee
+}
+.codepen {
+    background:#000
+}
+.github {
+    background:#333
+}
