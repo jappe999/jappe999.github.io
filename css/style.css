@@ -156,7 +156,7 @@ main {
   min-height:300px;
   width:90%;
   position:relative;
-  top:20px;
+  top:110px;
   left:5%;
   padding-bottom:20px;
 }
@@ -301,7 +301,7 @@ footer {
   width:90%;
   padding:4px 5% 10px;
   position:relative;
-  top:40px;
+  top:130px;
 }
 footer li {
   margin-top:6px;
