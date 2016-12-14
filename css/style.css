@@ -79,7 +79,7 @@ body.active::after {
 
 .app header, .app main, .app footer {
   background:white;
-  box-shadow:0 4px 10px #aaa;
+  box-shadow:0 4px 10px #999;
 }
 
 .app header, .app main, #menu, .app footer {
@@ -103,7 +103,7 @@ body.active::after {
 .app header {
   height:40px;
   width:80%;
-  position:relative;
+  position:fixed;
   top:0;
   left:0;
   background:transparent;
@@ -275,7 +275,7 @@ main section .horizontal-align li p {
 #menu {
   height:100%;
   width:65%;
-  position:absolute;
+  position:fixed;
   top:0;
   right:-65%;
   background:#1e1e1e;
@@ -293,7 +293,7 @@ main section .horizontal-align li p {
 #menu nav ul li {
   height:40px;
   width:80%;
-  padding:10%;
+  padding:24px 10% 0;
 }
 
 footer {
