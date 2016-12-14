@@ -223,16 +223,15 @@ main section .horizontal-align {
   justify-content:space-around;
 }
 main section .horizontal-align li {
-  width:150px;
+  width:240px;
   position:relative;
-  padding:20px 5%;
+  margin:0 16px;
+  padding:0;
   text-align:center;
 }
 main section .horizontal-align li .container {
-  width:175%;
+  width:100%;
   position:relative;
-  top:-20px;
-  left:-37.5%;
   padding:20px 0;
 }
 main section .horizontal-align li .container:hover {
@@ -260,10 +259,13 @@ main section .horizontal-align li .fa-codepen {
   background:#000;
 }
 main section .horizontal-align li .fa-twitter {
-  background:#55acee;
+  background:#55ACEE;
 }
 main section .horizontal-align li .fa-github {
   background:#333;
+}
+main section .horizontal-align li .fa-gamepad {
+  background:#1F495C;
 }
 main section .horizontal-align li p {
   width:75%;
