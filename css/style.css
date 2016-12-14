@@ -179,6 +179,9 @@ main section {
   padding:1% 5%;
   margin-bottom:64px;
 }
+main section.post {
+  max-width:1000px;
+}
 main section h1 {
   font-size:40px;
   border-bottom:thin rgba(39, 174, 96, 0.9) dashed;
