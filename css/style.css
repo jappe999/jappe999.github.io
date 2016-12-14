@@ -225,7 +225,7 @@ main section .horizontal-align {
 main section .horizontal-align li {
   width:240px;
   position:relative;
-  margin:0 16px;
+  margin:0 16px 16px;
   padding:0;
   text-align:center;
 }
