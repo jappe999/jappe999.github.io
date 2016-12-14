@@ -109,6 +109,7 @@ body.active::after {
   background:transparent;
   padding:20px 10%;
   background:white;
+  z-index:200
 }
 .app header nav.has-img > a:hover::after {
   width:0;
