@@ -1,8 +1,9 @@
-[] Header hides scrollbar - fixing.
-[] .horizontal-align box-shadow - remove or fixed?
-[] Make the homepage more encouraging for user to stay.
-[] Replace Codepen-icon with about-page.
-[] Replace Twitter-icon with project-page.
-[] Remove emoji smiley faces.
-[] Add Twitter icon in header of footer.
-[] Place projects link on top in the sidebar.
+[O] Header hides scrollbar - testing.
+[x] .horizontal-align box-shadow - remove or fixed?
+[O] Make the homepage more encouraging for user to stay.
+[O] Replace Twitter-icon with about-page.
+[X] Replace Codepen-icon with project-page.
+[X] Remove emoji smiley faces.
+[O] Add Twitter icon in header or footer.
+[X] Place projects link on top in the sidebar.
+[X] Add aria-hidden='true' to decoration icons.
