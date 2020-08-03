@@ -1,0 +1,38 @@
+{
+  "name": "jlinden",
+  "description": "Site of Jasper van der Linden",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sapper dev --no-hot",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run",
+    "svelte-check": "svelte-check"
+  },
+  "dependencies": {
+    "compression": "^1.7.1",
+    "polka": "next",
+    "sirv": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/node": "^14.0.27",
+    "@types/polka": "^0.5.1",
+    "autoprefixer": "^9.8.6",
+    "cypress": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.5",
+    "svelte-loader": "^2.9.0",
+    "svelte-preprocess": "^4.0.9",
+    "svelte-types": "^0.0.6",
+    "ts-loader": "^8.0.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.7.0",
+    "webpack-modules": "^1.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*"],
+  "compilerOptions": {
+    "outDir": "./__sapper__/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "typeRoots": ["typings"],
+    "types": ["svelte", "node", "@sapper"]
+  }
+}
