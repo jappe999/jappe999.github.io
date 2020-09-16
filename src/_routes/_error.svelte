@@ -29,7 +29,7 @@
 </style>
 
 <svelte:head>
-  <title>{status} - Jasper van der Linden</title>
+  <title>{status}</title>
 </svelte:head>
 
 <h1>{status}</h1>

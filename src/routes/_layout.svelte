@@ -1,22 +1,24 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+  import Menu from "../components/Menu.svelte";
 
-	export let segment;
+  export let segment;
+  export let menuOpen = false;
+
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
+  };
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
 
-<Nav {segment}/>
+<div class="flex flex-no-wrap">
+  <Menu {segment} {menuOpen} on:toggle={toggleMenu} />
 
-<main>
-	<slot></slot>
-</main>
+  <main class="min-h-screen w-full overflow-y-scroll overflow-x-hidden p-4">
+    <slot />
+  </main>
+</div>
