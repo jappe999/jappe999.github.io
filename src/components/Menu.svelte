@@ -107,8 +107,8 @@
       {#each menuItems as menuItem, i}
         <li
           class="menu-item"
-          in:fly={{ y: 100, duration: 500, delay: i * 100 }}
-          out:fly={{ y: 100, duration: 500, delay: (menuItems.length - i - 1) * 100 }}
+          in:fly={{ y: 100, duration: 400, delay: i * 100 }}
+          out:fly={{ y: 100, duration: 300, delay: (menuItems.length - i - 1) * 100 }}
           on:click={close}>
           <a
             class="menu-item__anchor"
