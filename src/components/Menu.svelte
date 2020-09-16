@@ -20,17 +20,15 @@
   const open = () => {
     dispatch("toggle", true);
   };
-
-  $: segment && close();
 </script>
 
 <style>
   .sidebar {
-    @apply h-screen flex flex-col items-center p-6 shadow-xs text-gray-500;
+    @apply flex py-6 px-4 shadow-xs text-gray-500 z-40;
   }
 
   .sidebar-menu {
-    @apply h-8 w-8;
+    @apply h-8 w-8 cursor-pointer;
   }
 
   .sidebar-menu__line {
@@ -40,15 +38,15 @@
   }
 
   .sidebar-segment {
-    @apply h-full w-full relative flex justify-center items-center text-center;
+    @apply h-full w-full relative flex justify-start items-center px-6 text-center;
   }
 
   .sidebar-segment__text {
-    @apply absolute text-2xl whitespace-no-wrap font-mono transform -rotate-90 origin-center;
+    @apply text-2xl whitespace-no-wrap font-mono truncate;
   }
 
   .menu-wrapper {
-    @apply h-screen w-full fixed flex p-6 bg-white shadow text-gray-500 font-light font-mono overflow-auto;
+    @apply h-screen w-full fixed flex p-6 bg-white shadow text-gray-500 font-light font-mono overflow-auto z-50;
   }
 
   .menu {
@@ -66,6 +64,20 @@
   .menu-item__anchor--active {
     @apply border-gray-500;
   }
+
+  @screen sm {
+    .sidebar {
+      @apply h-screen flex-col;
+    }
+
+    .sidebar-segment {
+      @apply justify-center;
+    }
+
+    .sidebar-segment__text {
+      @apply absolute transform -rotate-90 origin-center;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -73,7 +85,7 @@
 </svelte:head>
 
 <div class="sidebar">
-  <div class="sidebar-menu" on:click={open}>
+  <div class="sidebar-menu m-auto" on:click={open}>
     <div class="sidebar-menu__line w-8" />
     <div class="sidebar-menu__line w-4" />
     <div class="sidebar-menu__line w-6" />
@@ -96,7 +108,8 @@
         <li
           class="menu-item"
           in:fly={{ y: 100, duration: 500, delay: i * 100 }}
-          out:fly={{ y: 100, duration: 500, delay: (menuItems.length - i - 1) * 100 }}>
+          out:fly={{ y: 100, duration: 500, delay: (menuItems.length - i - 1) * 100 }}
+          on:click={close}>
           <a
             class="menu-item__anchor"
             class:menu-item__anchor--active={segment === menuItem.href || (menuItem.href === '' && segment === undefined)}

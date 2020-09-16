@@ -5,7 +5,7 @@
 
 <style>
   .navigation {
-    @apply w-full flex justify-between p-6 text-gray-500;
+    @apply w-full hidden justify-between px-6 py-5 text-gray-500 z-30;
   }
 
   .navigation__title {
@@ -23,13 +23,18 @@
   .navigation-item__anchor--active {
     @apply border-red-500;
   }
+
+  @screen sm {
+    .navigation {
+      @apply flex;
+    }
+  }
 </style>
 
 <nav class="navigation">
   <p class="navigation__title">Jasper van der Linden</p>
 
-  <ul class="flex justify-end items-center">
-
+  <ul class="hidden lg:flex items-center">
     {#each menuItems as menuItem}
       <li class="navigation-item">
         <a

@@ -62,12 +62,13 @@
   @tailwind utilities;
 </style>
 
-<div class="flex flex-no-wrap">
+<div class="flex flex-col sm:flex-row flex-no-wrap overflow-hidden">
   <Menu {segment} {menuOpen} {menuItems} on:toggle={toggleMenu} />
+
   <div class="h-screen w-full flex flex-col overflow-y-scroll overflow-x-hidden">
     <Nav {segment} {menuItems} />
 
-    <main class="w-full p-6 text-gray-500">
+    <main class="flex-grow w-full text-gray-500">
       <slot />
     </main>
   </div>
