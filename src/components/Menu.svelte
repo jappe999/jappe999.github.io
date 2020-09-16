@@ -4,66 +4,29 @@
 
   const dispatch = createEventDispatcher();
 
-  export let menuOpen = false;
   export let segment;
-
-  let menuItems = [];
+  export let menuOpen = false;
+  export let menuItems = [];
 
   const getName = (segment) => {
     const item = menuItems.find(({ href }) => href === segment || (href === "" && segment === undefined));
     return (item || {}).description;
   };
 
-  const toggle = () => {
-    dispatch("toggle");
+  const close = () => {
+    dispatch("toggle", false);
   };
 
-  $: {
-    toggle();
-    menuItems = [
-      {
-        name: "Home",
-        description: "Web/Software Developer",
-        href: "",
-        attributes: {
-          rel: "prefetch",
-          "aria-current": segment === undefined ? "page" : undefined,
-        },
-      },
-      {
-        name: "About",
-        description: "About",
-        href: "about",
-        attributes: {
-          rel: "prefetch",
-          "aria-current": segment === "about" ? "page" : undefined,
-        },
-      },
-      {
-        name: "Projects",
-        description: "Projects",
-        href: "projects",
-        attributes: {
-          rel: "prefetch",
-          "aria-current": segment === "projects" ? "page" : undefined,
-        },
-      },
-      {
-        name: "Blog",
-        description: "Blog",
-        href: "blog",
-        attributes: {
-          rel: "prefetch",
-          "aria-current": segment === "blog" ? "page" : undefined,
-        },
-      },
-    ];
-  }
+  const open = () => {
+    dispatch("toggle", true);
+  };
+
+  $: segment && close();
 </script>
 
 <style>
   .sidebar {
-    @apply h-screen flex flex-col items-center p-6 shadow-xs;
+    @apply h-screen flex flex-col items-center p-6 shadow-xs text-gray-500;
   }
 
   .sidebar-menu {
@@ -73,7 +36,7 @@
   .sidebar-menu__line {
     @apply bg-gray-500 rounded-full;
     height: 0.1875rem;
-    margin-bottom: 0.375rem;
+    margin-top: 0.375rem;
   }
 
   .sidebar-segment {
@@ -85,15 +48,15 @@
   }
 
   .menu-wrapper {
-    @apply h-screen w-full fixed px-3 bg-white shadow text-gray-500 font-light font-mono;
+    @apply h-screen w-full fixed flex p-6 bg-white shadow text-gray-500 font-light font-mono overflow-auto;
   }
 
   .menu {
-    @apply h-full flex flex-col justify-center items-center;
+    @apply m-auto text-center;
   }
 
   .menu-item {
-    @apply py-6 text-2xl;
+    @apply py-6 text-3xl;
   }
 
   .menu-item__anchor {
@@ -110,7 +73,7 @@
 </svelte:head>
 
 <div class="sidebar">
-  <div class="sidebar-menu" on:click={toggle}>
+  <div class="sidebar-menu" on:click={open}>
     <div class="sidebar-menu__line w-8" />
     <div class="sidebar-menu__line w-4" />
     <div class="sidebar-menu__line w-6" />
@@ -122,6 +85,12 @@
 
 {#if menuOpen}
   <nav class="menu-wrapper" in:fade out:fade={{ delay: 200 }}>
+    <div class="w-full fixed mt-2">
+      <div class="sidebar-menu relative" on:click={close}>
+        <div class="sidebar-menu__line w-8 absolute transform origin-center rotate-45" />
+        <div class="sidebar-menu__line w-8 absolute transform origin-center -rotate-45" />
+      </div>
+    </div>
     <ul class="menu">
       {#each menuItems as menuItem, i}
         <li

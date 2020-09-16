@@ -1,58 +1,45 @@
 <script>
   export let segment;
+  export let menuItems = [];
 </script>
 
 <style>
-  /* clearfix */
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
+  .navigation {
+    @apply w-full flex justify-between p-6 text-gray-500;
   }
 
-  li {
-    display: block;
-    float: left;
+  .navigation__title {
+    @apply text-2xl font-semibold font-mono;
   }
 
-  [aria-current] {
-    position: relative;
-    display: inline-block;
+  .navigation-item {
+    @apply px-3;
   }
 
-  [aria-current]::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: rgb(255, 62, 0);
-    display: block;
-    bottom: 0;
+  .navigation-item__anchor {
+    @apply py-2 border-b-2 border-transparent;
   }
 
-  a {
-    text-decoration: none;
-    padding: 1.5em 0.5em;
-    display: block;
+  .navigation-item__anchor--active {
+    @apply border-red-500;
   }
 </style>
 
-<nav class="bg-white shadow px-3 text-gray-500 font-light">
-  <ul>
-    <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">home</a>
-    </li>
-    <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">about</a>
-    </li>
-    <li>
-      <a aria-current={segment === 'color-scheme' ? 'page' : undefined} href="color-scheme">color scheme</a>
-    </li>
+<nav class="navigation">
+  <p class="navigation__title">Jasper van der Linden</p>
 
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
-      <a rel="prefetch" aria-current={segment === 'blog' ? 'page' : undefined} href="blog">blog</a>
-    </li>
+  <ul class="flex justify-end items-center">
+
+    {#each menuItems as menuItem}
+      <li class="navigation-item">
+        <a
+          class="navigation-item__anchor"
+          class:navigation-item__anchor--active={segment === menuItem.href || (menuItem.href === '' && segment === undefined)}
+          href={menuItem.href}
+          {...menuItem.attributes}>
+          {menuItem.name}
+        </a>
+      </li>
+    {/each}
   </ul>
 </nav>

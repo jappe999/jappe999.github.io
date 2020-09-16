@@ -1,12 +1,59 @@
 <script>
   import Menu from "../components/Menu.svelte";
+  import Nav from "../components/Nav.svelte";
 
   export let segment;
-  export let menuOpen = false;
+  let menuOpen = false;
+  let menuItems = [];
 
-  const toggleMenu = () => {
-    menuOpen = !menuOpen;
+  const toggleMenu = (event) => {
+    if (event.detail !== undefined) menuOpen = event.detail;
+    else menuOpen = !menuOpen;
   };
+
+  $: menuItems = [
+    {
+      name: "Home",
+      description: "Web/Software Developer",
+      href: "",
+      attributes: {
+        "aria-current": segment === undefined ? "page" : undefined,
+      },
+    },
+    {
+      name: "Projects",
+      description: "Projects",
+      href: "projects",
+      attributes: {
+        "aria-current": segment === "projects" ? "page" : undefined,
+      },
+    },
+    {
+      name: "About",
+      description: "About",
+      href: "about",
+      attributes: {
+        "aria-current": segment === "about" ? "page" : undefined,
+      },
+    },
+    {
+      name: "Contact",
+      description: "Contact",
+      href: "contact",
+      attributes: {
+        "aria-current": segment === "about" ? "page" : undefined,
+      },
+    },
+    {
+      name: "Blog",
+      description: "Blog",
+      href: "blog",
+      attributes: {
+        rel: "prefetch",
+        "aria-current": segment === "blog" ? "page" : undefined,
+      },
+    },
+  ];
 </script>
 
 <style global>
@@ -16,9 +63,12 @@
 </style>
 
 <div class="flex flex-no-wrap">
-  <Menu {segment} {menuOpen} on:toggle={toggleMenu} />
+  <Menu {segment} {menuOpen} {menuItems} on:toggle={toggleMenu} />
+  <div class="h-screen w-full flex flex-col overflow-y-scroll overflow-x-hidden">
+    <Nav {segment} {menuItems} />
 
-  <main class="min-h-screen w-full overflow-y-scroll overflow-x-hidden p-4">
-    <slot />
-  </main>
+    <main class="w-full p-6 text-gray-500">
+      <slot />
+    </main>
+  </div>
 </div>
