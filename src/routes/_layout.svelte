@@ -60,6 +60,10 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  main {
+    @apply w-full absolute;
+  }
 </style>
 
 <div class="flex flex-col sm:flex-row flex-no-wrap overflow-hidden">
@@ -68,8 +72,8 @@
   <div class="h-screen w-full flex flex-col overflow-y-scroll overflow-x-hidden">
     <Nav {segment} {menuItems} />
 
-    <main class="flex-grow w-full text-gray-500">
+    <div class="relative">
       <slot />
-    </main>
+    </div>
   </div>
 </div>
