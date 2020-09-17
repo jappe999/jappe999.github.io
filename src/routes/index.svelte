@@ -1,50 +1,19 @@
-<style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
-  }
+<script>
+  export let segment;
+</script>
 
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
+{#if segment === undefined}
+  <style>
+    .navigation {
+      color: white !important;
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     }
-  }
-</style>
+  </style>
+{/if}
 
-<svelte:head>
-  <title>Sapper project template</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-  <img alt="Success Kid" src="successkid.jpg" />
-  <figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p>
-  <strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong>
-</p>
+<div class="h-screen w-full bg-gradient-to-br from-green-100 to-yellow-100" style="margin-top: -4.75rem;">
+  <div class="h-full max-w-5xl flex flex-col justify-center items-center mx-auto text-center text-white font-mono">
+    <p class="text-5xl">Hello!</p>
+    <h1 class="text-3xl">My name is Jasper.</h1>
+  </div>
+</div>

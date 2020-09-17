@@ -1,22 +1,75 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+  import Menu from "../components/Menu.svelte";
+  import Nav from "../components/Nav.svelte";
 
-	export let segment;
+  export let segment;
+  let menuOpen = false;
+  let menuItems = [];
+
+  const toggleMenu = (event) => {
+    if (event.detail !== undefined) menuOpen = event.detail;
+    else menuOpen = !menuOpen;
+  };
+
+  $: menuItems = [
+    {
+      name: "Home",
+      description: "Web/Software Developer",
+      href: "",
+      attributes: {
+        "aria-current": segment === undefined ? "page" : undefined,
+      },
+    },
+    {
+      name: "Projects",
+      description: "Projects",
+      href: "projects",
+      attributes: {
+        "aria-current": segment === "projects" ? "page" : undefined,
+      },
+    },
+    {
+      name: "About",
+      description: "About",
+      href: "about",
+      attributes: {
+        "aria-current": segment === "about" ? "page" : undefined,
+      },
+    },
+    {
+      name: "Contact",
+      description: "Contact",
+      href: "contact",
+      attributes: {
+        "aria-current": segment === "about" ? "page" : undefined,
+      },
+    },
+    {
+      name: "Blog",
+      description: "Blog",
+      href: "blog",
+      attributes: {
+        rel: "prefetch",
+        "aria-current": segment === "blog" ? "page" : undefined,
+      },
+    },
+  ];
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
 
-<Nav {segment}/>
+<div class="flex flex-col sm:flex-row flex-no-wrap overflow-hidden">
+  <Menu {segment} {menuOpen} {menuItems} on:toggle={toggleMenu} />
 
-<main>
-	<slot></slot>
-</main>
+  <div class="h-screen w-full flex flex-col overflow-y-scroll overflow-x-hidden">
+    <Nav {segment} {menuItems} />
+
+    <main class="flex-grow w-full text-gray-500">
+      <slot />
+    </main>
+  </div>
+</div>
