@@ -5,11 +5,11 @@
 
 <style>
   .navigation {
-    @apply w-full hidden justify-between px-6 py-5 text-gray-500 z-30;
+    @apply h-20 w-full hidden justify-between px-6 py-5 text-gray-500 z-30 transition-colors duration-100;
   }
 
   .navigation__title {
-    @apply text-2xl font-semibold font-mono;
+    @apply my-auto text-2xl font-semibold font-mono;
   }
 
   .navigation-item {
