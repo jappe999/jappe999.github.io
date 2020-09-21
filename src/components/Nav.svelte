@@ -32,7 +32,7 @@
 </style>
 
 <nav class="navigation">
-  <p class="navigation__title">Jasper van der Linden</p>
+  <a href="/" class="navigation__title">Jasper van der Linden</a>
 
   <ul class="hidden lg:flex items-center">
     {#each menuItems as menuItem}

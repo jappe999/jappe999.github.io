@@ -1,4 +1,6 @@
 <script>
+  import MainWrapper from "../components/MainWrapper.svelte";
+
   export let status;
   export let error;
 
@@ -8,23 +10,10 @@
 <style>
   h1,
   p {
-    margin: 0 auto;
+    @apply font-mono text-gray-500;
   }
-
   h1 {
-    font-size: 2.8em;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
-  }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
+    @apply text-6xl font-mono font-bold text-gray-500;
   }
 </style>
 
@@ -32,10 +21,14 @@
   <title>{status} - Jasper van der Linden</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<MainWrapper>
+  <div class="w-full flex flex-col justify-center items-center my-auto">
+    <h1>{status}</h1>
 
-<p>{error.message}</p>
+    <p>{error.message}</p>
 
-{#if dev && error.stack}
-  <pre>{error.stack}</pre>
-{/if}
+    {#if dev && error.stack}
+      <pre>{error.stack}</pre>
+    {/if}
+  </div>
+</MainWrapper>

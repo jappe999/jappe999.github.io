@@ -2,6 +2,11 @@
   import { createEventDispatcher } from "svelte";
   import { fade, fly } from "svelte/transition";
 
+  import TwitterIcon from "../assets/icons/twitter.svelte";
+  import GitHubIcon from "../assets/icons/github.svelte";
+  import LinkedInIcon from "../assets/icons/linkedin.svelte";
+  import EmailIcon from "../assets/icons/mail.svelte";
+
   const dispatch = createEventDispatcher();
 
   export let segment;
@@ -43,6 +48,30 @@
 
   .sidebar-segment__text {
     @apply text-2xl whitespace-no-wrap font-mono truncate;
+  }
+
+  .social {
+    @apply h-10 w-10 p-2 bg-white border-2 border-transparent rounded-full transition-colors duration-100;
+  }
+
+  .social:hover {
+    @apply bg-gray-500 text-white;
+  }
+
+  .social--twitter {
+    color: #1da1f2;
+  }
+
+  .social--github {
+    color: #24292e;
+  }
+
+  .social--linkedin {
+    color: #2867b2;
+  }
+
+  .social--email {
+    color: theme("colors.gray.500");
   }
 
   .menu-wrapper {
@@ -92,6 +121,21 @@
   </div>
   <div class="sidebar-segment">
     <p class="sidebar-segment__text">{getName(segment)}</p>
+  </div>
+
+  <div class="flex flex-col justify-around items-center mt-4">
+    <a href="https://twitter.com/webdrawings/" class="social social--twitter">
+      <TwitterIcon />
+    </a>
+    <a href="https://github.com/jappe999/" class="social social--github">
+      <GitHubIcon />
+    </a>
+    <a href="https://www.linkedin.com/in/jasper-van-der-linden/" class="social social--linkedin">
+      <LinkedInIcon />
+    </a>
+    <a href="mailto:info@webdrawings.nl" class="social social--email">
+      <EmailIcon />
+    </a>
   </div>
 </div>
 
