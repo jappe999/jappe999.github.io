@@ -123,7 +123,7 @@
     <p class="sidebar-segment__text">{getName(segment)}</p>
   </div>
 
-  <div class="flex flex-col justify-around items-center mt-4">
+  <div class="hidden sm:flex flex-col justify-around items-center mt-4">
     <a href="https://twitter.com/webdrawings/" class="social social--twitter">
       <TwitterIcon />
     </a>
