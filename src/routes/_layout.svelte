@@ -14,7 +14,7 @@
   $: menuItems = [
     {
       name: "Home",
-      description: "Web/Software Developer",
+      description: "Full-Stack Web Developer",
       href: "",
       attributes: {
         "aria-current": segment === undefined ? "page" : undefined,
@@ -57,13 +57,7 @@
 </script>
 
 <style global>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  main {
-    @apply w-full absolute;
-  }
+  @import "../assets/css/main.css";
 </style>
 
 <div class="flex flex-col sm:flex-row flex-no-wrap overflow-hidden">
@@ -72,7 +66,7 @@
   <div class="h-screen w-full flex flex-col overflow-y-scroll overflow-x-hidden">
     <Nav {segment} {menuItems} />
 
-    <div class="relative">
+    <div class="relative flex flex-grow">
       <slot />
     </div>
   </div>
