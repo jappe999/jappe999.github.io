@@ -1,11 +1,11 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { fade, fly } from "svelte/transition";
+  import { createEventDispatcher } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
 
-  import TwitterIcon from "../assets/icons/twitter.svelte";
-  import GitHubIcon from "../assets/icons/github.svelte";
-  import LinkedInIcon from "../assets/icons/linkedin.svelte";
-  import EmailIcon from "../assets/icons/mail.svelte";
+  import TwitterIcon from '../assets/icons/twitter.svelte';
+  import GitHubIcon from '../assets/icons/github.svelte';
+  import LinkedInIcon from '../assets/icons/linkedin.svelte';
+  import EmailIcon from '../assets/icons/mail.svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -14,22 +14,22 @@
   export let menuItems = [];
 
   const getName = (segment) => {
-    const item = menuItems.find(({ href }) => href === segment || (href === "" && segment === undefined));
+    const item = menuItems.find(({ href }) => href === segment || (href === '' && segment === undefined));
     return (item || {}).description;
   };
 
   const close = () => {
-    dispatch("toggle", false);
+    dispatch('toggle', false);
   };
 
   const open = () => {
-    dispatch("toggle", true);
+    dispatch('toggle', true);
   };
 </script>
 
 <style>
   .sidebar {
-    @apply flex py-6 px-4 shadow-xs text-gray-500 z-40;
+    @apply flex py-6 px-4 shadow-xs bg-white text-gray-500 z-40;
   }
 
   .sidebar-menu {
@@ -71,7 +71,7 @@
   }
 
   .social--email {
-    color: theme("colors.gray.500");
+    color: theme('colors.gray.500');
   }
 
   .menu-wrapper {
@@ -124,16 +124,31 @@
   </div>
 
   <div class="hidden sm:flex flex-col justify-around items-center mt-4">
-    <a href="https://twitter.com/webdrawings/" class="social social--twitter">
+    <a
+      href="https://twitter.com/webdrawings/"
+      class="social social--twitter"
+      aria-label="Go to my Twitter account"
+      target="_blank"
+      rel="noreferrer">
       <TwitterIcon />
     </a>
-    <a href="https://github.com/jappe999/" class="social social--github">
+    <a
+      href="https://github.com/jappe999/"
+      class="social social--github"
+      aria-label="Go to my GitHub account"
+      target="_blank"
+      rel="noreferrer">
       <GitHubIcon />
     </a>
-    <a href="https://www.linkedin.com/in/jasper-van-der-linden/" class="social social--linkedin">
+    <a
+      href="https://www.linkedin.com/in/jasper-van-der-linden/"
+      class="social social--linkedin"
+      aria-label="Go to my LinkedIn account"
+      target="_blank"
+      rel="noreferrer">
       <LinkedInIcon />
     </a>
-    <a href="mailto:info@webdrawings.nl" class="social social--email">
+    <a href="mailto:info@webdrawings.nl" class="social social--email" aria-label="Email me">
       <EmailIcon />
     </a>
   </div>
