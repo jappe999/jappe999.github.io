@@ -1,6 +1,6 @@
 <script>
-  import { fade } from 'svelte/transition';
-  import MainWrapper from '../components/MainWrapper.svelte';
+  import { fade } from "svelte/transition";
+  import MainWrapper from "../components/MainWrapper.svelte";
 
   export let segment;
 </script>
@@ -8,16 +8,16 @@
 <style>
   .card {
     @apply mx-auto mb-1 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100;
-    box-shadow: 0.25rem 0.25rem 0 theme('colors.gray.500');
+    box-shadow: 0.25rem 0.25rem 0 theme("colors.gray.500");
   }
 
   .button {
     @apply relative mb-2 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100;
-    box-shadow: 0.25rem 0.25rem 0 theme('colors.gray.500');
+    box-shadow: 0.25rem 0.25rem 0 theme("colors.gray.500");
   }
 
   .button:hover {
-    box-shadow: 0 0 0 theme('colors.gray.500');
+    box-shadow: 0 0 0 theme("colors.gray.500");
   }
 </style>
 
@@ -26,6 +26,7 @@
     body {
       @apply bg-gradient-to-br from-green-100 to-yellow-100;
     }
+
     .navigation {
       color: white !important;
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
@@ -34,13 +35,18 @@
 {/if}
 
 <MainWrapper>
-  <div class="min-h-full w-full flex flex-col justify-center items-center m-auto">
+  <div
+    class="min-h-full w-full flex flex-col justify-center items-center m-auto">
     <div class="w-full max-w-5xl flex flex-wrap justify-center items-center">
-      <div class="h-full flex flex-col justify-center items-center p-6 text-center text-gray-500 font-mono">
+      <div
+        class="h-full flex flex-col justify-center items-center p-6 text-center
+        text-gray-500 font-mono">
         <img src="profile-pic.jpg" alt="Me!" class="h-64 w-64 rounded-full" />
       </div>
 
-      <div class="h-full flex flex-col justify-center items-center p-6 text-center text-gray-500 font-mono">
+      <div
+        class="h-full flex flex-col justify-center items-center p-6 text-center
+        text-gray-500 font-mono">
         <div class="card flex flex-col mt-auto">
           <h1 class="text-5xl">Jasper van der Linden</h1>
           <h2 class="text-3xl">Full-Stack Web Developer</h2>

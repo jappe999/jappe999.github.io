@@ -13,7 +13,11 @@
     "svelte-check": "svelte-check"
   },
   "dependencies": {
+    "@types/marked": "^1.1.0",
+    "@types/node-fetch": "^2.5.7",
     "compression": "^1.7.1",
+    "marked": "^1.2.0",
+    "node-fetch": "^2.6.1",
     "polka": "next",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
