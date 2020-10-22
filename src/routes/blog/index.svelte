@@ -34,11 +34,8 @@
 
           <p>{post.content.replace(/<([^>]+)>/gi, '').substr(0, 255)}</p>
         </div>
-        <div class="h-full overflow-hidden">
-          <img
-            src="data:image;base64,{post.thumbnail}"
-            alt=""
-            class="h-full p-1" />
+        <div class="w-64 h-full overflow-hidden border-l border-gray-500">
+          <img src={post.thumbnail} alt="" class="object-cover h-full" />
         </div>
       </a>
     {/each}

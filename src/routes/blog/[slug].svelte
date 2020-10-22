@@ -21,12 +21,12 @@
 
 <MainWrapper>
   <div class="flex flex-col w-full max-w-5xl min-h-full mx-auto">
-    <div class="flex w-full h-64">
-      <img
-        src="data:image;base64,{post.thumbnail}"
-        alt=""
-        class="object-cover w-full" />
-    </div>
+    {#if post.thumbnail}
+      <div
+        class="flex w-full h-64 mb-1 text-gray-500 border border-gray-500 shadow">
+        <img src={post.thumbnail} alt="" class="object-cover w-full" />
+      </div>
+    {/if}
 
     <article>
       <h1 class="font-mono text-5xl">{post.title}</h1>

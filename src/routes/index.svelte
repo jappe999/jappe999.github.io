@@ -1,5 +1,4 @@
 <script>
-  import { fade } from "svelte/transition";
   import MainWrapper from "../components/MainWrapper.svelte";
 
   export let segment;
@@ -7,13 +6,11 @@
 
 <style>
   .card {
-    @apply mx-auto mb-1 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100;
-    box-shadow: 0.25rem 0.25rem 0 theme("colors.gray.500");
+    @apply mx-auto mb-1 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100 shadow;
   }
 
   .button {
-    @apply relative mb-2 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100;
-    box-shadow: 0.25rem 0.25rem 0 theme("colors.gray.500");
+    @apply relative mb-2 px-6 py-3 bg-white text-gray-500 border border-gray-500 transition-shadow duration-100 shadow;
   }
 
   .button:hover {
@@ -36,23 +33,21 @@
 
 <MainWrapper>
   <div
-    class="min-h-full w-full flex flex-col justify-center items-center m-auto">
-    <div class="w-full max-w-5xl flex flex-wrap justify-center items-center">
+    class="flex flex-col items-center justify-center w-full min-h-full m-auto">
+    <div class="flex flex-wrap items-center justify-center w-full max-w-5xl">
       <div
-        class="h-full flex flex-col justify-center items-center p-6 text-center
-        text-gray-500 font-mono">
-        <img src="profile-pic.jpg" alt="Me!" class="h-64 w-64 rounded-full" />
+        class="flex flex-col items-center justify-center h-full p-6 font-mono text-center text-gray-500">
+        <img src="profile-pic.jpg" alt="Me!" class="w-64 h-64 rounded-full" />
       </div>
 
       <div
-        class="h-full flex flex-col justify-center items-center p-6 text-center
-        text-gray-500 font-mono">
-        <div class="card flex flex-col mt-auto">
+        class="flex flex-col items-center justify-center h-full p-6 font-mono text-center text-gray-500">
+        <div class="flex flex-col mt-auto card">
           <h1 class="text-5xl">Jasper van der Linden</h1>
           <h2 class="text-3xl">Full-Stack Web Developer</h2>
         </div>
 
-        <div class="w-full flex flex-wrap justify-between mt-8 text-xl">
+        <div class="flex flex-wrap justify-between w-full mt-8 text-xl">
           <a href="/projects" class="button">Projects</a>
           <a href="/about" class="button">About</a>
           <a href="/contact" class="button">Contact me</a>
