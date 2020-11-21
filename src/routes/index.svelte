@@ -1,7 +1,5 @@
 <script>
   import MainWrapper from "../components/MainWrapper.svelte";
-
-  export let segment;
 </script>
 
 <style>
@@ -18,10 +16,10 @@
   }
 </style>
 
-{#if segment === undefined}
+<svelte:head>
   <style>
-    body {
-      @apply bg-gradient-to-br from-green-100 to-yellow-100;
+    body::before {
+      @apply opacity-100;
     }
 
     .navigation {
@@ -29,7 +27,7 @@
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     }
   </style>
-{/if}
+</svelte:head>
 
 <MainWrapper>
   <div
@@ -47,7 +45,8 @@
           <h2 class="text-3xl">Full-Stack Web Developer</h2>
         </div>
 
-        <div class="flex flex-wrap justify-between w-full mt-8 text-xl">
+        <div
+          class="flex flex-col flex-wrap justify-between w-full mt-8 text-xl md:flex-row">
           <a href="/projects" class="button">Projects</a>
           <a href="/about" class="button">About</a>
           <a href="/contact" class="button">Contact me</a>

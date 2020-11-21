@@ -9,6 +9,6 @@
   }
 </style>
 
-<button class="button">
+<button class="button" role="button">
   <slot />
 </button>

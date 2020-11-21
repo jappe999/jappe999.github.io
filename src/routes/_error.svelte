@@ -22,7 +22,7 @@
 </svelte:head>
 
 <MainWrapper>
-  <div class="w-full flex flex-col justify-center items-center my-auto">
+  <div class="flex flex-col items-center justify-center w-full my-auto">
     <h1>{status}</h1>
 
     <p>{error.message}</p>

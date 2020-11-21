@@ -1,7 +1,6 @@
 <script>
   import MainWrapper from "../components/MainWrapper.svelte";
 
-  export let segment;
   const projects = [
     {
       title: "Project Cards",
@@ -106,13 +105,18 @@
   }
 </style>
 
-{#if segment === undefined}
+<svelte:head>
   <style>
-    body {
-      @apply bg-gradient-to-br from-yellow-100 to-green-100;
+    body::before {
+      @apply opacity-100;
+    }
+
+    .navigation {
+      color: white !important;
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     }
   </style>
-{/if}
+</svelte:head>
 
 <MainWrapper>
   <div class="relative w-full max-w-5xl mx-auto">

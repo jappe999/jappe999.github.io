@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 main {
-  @apply w-full absolute;
+  @apply absolute w-full;
 }

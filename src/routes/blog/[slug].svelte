@@ -19,6 +19,50 @@
   export let post;
 </script>
 
+<style global>
+  .blog-post p {
+    @apply mt-2;
+  }
+
+  .blog-post h2,
+  .blog-post h3,
+  .blog-post h4,
+  .blog-post h5,
+  .blog-post h6 {
+    @apply mt-4 mb-1;
+  }
+
+  .blog-post h2 {
+    @apply text-4xl;
+  }
+
+  .blog-post h3 {
+    @apply text-3xl;
+  }
+
+  .blog-post h4 {
+    @apply text-2xl;
+  }
+
+  .blog-post h5 {
+    @apply text-xl;
+  }
+
+  .blog-post h6 {
+    @apply text-lg;
+  }
+
+  .blog-post .hljs {
+    @apply rounded-md;
+  }
+</style>
+
+<svelte:head>
+  <title>{post.title} - Jasper van der Linden</title>
+  <meta name="description" content={post.meta.description} />
+  <meta name="keywords" content={post.meta.keywords.join(', ')} />
+</svelte:head>
+
 <MainWrapper>
   <div class="flex flex-col w-full max-w-5xl min-h-full mx-auto">
     {#if post.thumbnail}
@@ -28,10 +72,12 @@
       </div>
     {/if}
 
-    <article>
+    <a href="/blog" class="my-4">&larr; Return to list of blog posts</a>
+
+    <article class="blog-post">
       <h1 class="font-mono text-5xl">{post.title}</h1>
 
-      {@html post.content}
+      {@html post.html}
     </article>
   </div>
 </MainWrapper>

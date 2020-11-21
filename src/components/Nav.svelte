@@ -34,12 +34,12 @@
 <nav class="navigation">
   <a href="/" class="navigation__title">Jasper van der Linden</a>
 
-  <ul class="hidden lg:flex items-center">
+  <ul class="items-center hidden lg:flex">
     {#each menuItems as menuItem}
       <li class="navigation-item">
         <a
           class="navigation-item__anchor"
-          class:navigation-item__anchor--active={segment === menuItem.href || (menuItem.href === '' && segment === undefined)}
+          class:navigation-item__anchor--active={segment === menuItem.href.substr(1) || (menuItem.href.substr(1) === '' && segment === undefined)}
           href={menuItem.href}
           {...menuItem.attributes}>
           {menuItem.name}

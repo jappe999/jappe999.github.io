@@ -11,6 +11,6 @@
     "allowJs": true,
     "esModuleInterop": true,
     "typeRoots": ["typings"],
-    "types": ["svelte", "node", "@sapper"]
+    "types": ["svelte", "node", "@sapper", "highlight.js"]
   }
 }
