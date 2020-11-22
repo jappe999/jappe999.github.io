@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "NODE_ENV=development sapper dev --no-hot",
+    "build": "NODE_ENV=production yarn export",
     "export": "NODE_ENV=production sapper export",
-    "prod:build": "NODE_ENV=production sapper build",
-    "prod:start": "NODE_ENV=production node __sapper__/build",
+    "start": "NODE_ENV=production node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
