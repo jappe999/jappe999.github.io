@@ -3,6 +3,7 @@ const WebpackModules = require("webpack-modules");
 const path = require("path");
 const config = require("sapper/config/webpack.js");
 const pkg = require("./package.json");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -86,7 +87,12 @@ module.exports = {
       ],
     },
     mode,
-    plugins: [new WebpackModules()],
+    plugins: [
+      new WebpackModules(),
+      new CopyPlugin({
+        patterns: [{ from: "content", to: "" }],
+      }),
+    ],
     performance: {
       hints: false, // it doesn't matter if server.js is large
     },
