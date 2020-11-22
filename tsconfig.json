@@ -6,11 +6,11 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "es6",
-    "target": "es5",
+    "target": "es6",
     "moduleResolution": "node",
     "allowJs": true,
     "esModuleInterop": true,
     "typeRoots": ["typings"],
-    "types": ["svelte", "node", "@sapper"]
+    "types": ["svelte", "node", "@sapper", "highlight.js"]
   }
 }

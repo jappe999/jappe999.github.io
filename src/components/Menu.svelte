@@ -1,11 +1,11 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { fade, fly } from "svelte/transition";
+  import { createEventDispatcher } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
 
-  import TwitterIcon from "../assets/icons/twitter.svelte";
-  import GitHubIcon from "../assets/icons/github.svelte";
-  import LinkedInIcon from "../assets/icons/linkedin.svelte";
-  import EmailIcon from "../assets/icons/mail.svelte";
+  import TwitterIcon from '../assets/icons/twitter.svelte';
+  import GitHubIcon from '../assets/icons/github.svelte';
+  import LinkedInIcon from '../assets/icons/linkedin.svelte';
+  import EmailIcon from '../assets/icons/mail.svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -13,23 +13,27 @@
   export let menuOpen = false;
   export let menuItems = [];
 
-  const getName = (segment) => {
-    const item = menuItems.find(({ href }) => href === segment || (href === "" && segment === undefined));
-    return (item || {}).description;
-  };
 
   const close = () => {
-    dispatch("toggle", false);
+    dispatch('toggle', false);
   };
 
   const open = () => {
-    dispatch("toggle", true);
+    dispatch('toggle', true);
+  };
+
+  $: getName = (segment) => {
+    const item = menuItems.find(({ href }) => {
+      href = href.substr(1);
+      return href === segment || (href === '' && segment === undefined);
+    });
+    return (item || {}).description;
   };
 </script>
 
 <style>
   .sidebar {
-    @apply flex py-6 px-4 shadow-xs text-gray-500 z-40;
+    @apply flex py-6 px-4 shadow-xs bg-white text-gray-500 z-40;
   }
 
   .sidebar-menu {
@@ -71,7 +75,7 @@
   }
 
   .social--email {
-    color: theme("colors.gray.500");
+    color: theme('colors.gray.500');
   }
 
   .menu-wrapper {
@@ -114,26 +118,41 @@
 </svelte:head>
 
 <div class="sidebar">
-  <div class="sidebar-menu m-auto" on:click={open}>
-    <div class="sidebar-menu__line w-8" />
-    <div class="sidebar-menu__line w-4" />
-    <div class="sidebar-menu__line w-6" />
+  <div class="m-auto sidebar-menu" on:click={open}>
+    <div class="w-8 sidebar-menu__line" />
+    <div class="w-4 sidebar-menu__line" />
+    <div class="w-6 sidebar-menu__line" />
   </div>
   <div class="sidebar-segment">
     <p class="sidebar-segment__text">{getName(segment)}</p>
   </div>
 
-  <div class="hidden sm:flex flex-col justify-around items-center mt-4">
-    <a href="https://twitter.com/webdrawings/" class="social social--twitter">
+  <div class="flex-col items-center justify-around hidden mt-4 sm:flex">
+    <a
+      href="https://twitter.com/webdrawings/"
+      class="social social--twitter"
+      aria-label="Go to my Twitter account"
+      target="_blank"
+      rel="noreferrer">
       <TwitterIcon />
     </a>
-    <a href="https://github.com/jappe999/" class="social social--github">
+    <a
+      href="https://github.com/jappe999/"
+      class="social social--github"
+      aria-label="Go to my GitHub account"
+      target="_blank"
+      rel="noreferrer">
       <GitHubIcon />
     </a>
-    <a href="https://www.linkedin.com/in/jasper-van-der-linden/" class="social social--linkedin">
+    <a
+      href="https://www.linkedin.com/in/jasper-van-der-linden/"
+      class="social social--linkedin"
+      aria-label="Go to my LinkedIn account"
+      target="_blank"
+      rel="noreferrer">
       <LinkedInIcon />
     </a>
-    <a href="mailto:info@webdrawings.nl" class="social social--email">
+    <a href="mailto:info@webdrawings.nl" class="social social--email" aria-label="Email me">
       <EmailIcon />
     </a>
   </div>
@@ -141,10 +160,10 @@
 
 {#if menuOpen}
   <nav class="menu-wrapper" in:fade out:fade={{ delay: 200 }}>
-    <div class="w-full fixed mt-2">
-      <div class="sidebar-menu relative" on:click={close}>
-        <div class="sidebar-menu__line w-8 absolute transform origin-center rotate-45" />
-        <div class="sidebar-menu__line w-8 absolute transform origin-center -rotate-45" />
+    <div class="fixed w-full mt-2">
+      <div class="relative sidebar-menu" on:click={close}>
+        <div class="absolute w-8 origin-center transform rotate-45 sidebar-menu__line" />
+        <div class="absolute w-8 origin-center transform -rotate-45 sidebar-menu__line" />
       </div>
     </div>
     <ul class="menu">

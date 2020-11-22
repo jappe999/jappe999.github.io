@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
+  purge: ["src/**/*.html", "src/**/*.svelte"],
   theme: {
     colors: {
       transparent: "transparent",
@@ -62,14 +65,38 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: (theme) => ({
+        default: `0.25rem 0.25rem 0 ${theme("colors.gray.500")}`,
+      }),
       fontFamily: {
-        mono: ["Roboto Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+        mono: [
+          "Roboto Mono",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace",
+        ],
       },
       height: {
         128: "32rem",
       },
       width: {
         128: "32rem",
+      },
+      spacing: {
+        "1/2": "50%",
+        "1/3": "33.333333333%",
+        "2/3": "66.666666667%",
+        "1/4": "25%",
+        "3/4": "75%",
+        "1/5": "20%",
+        "2/5": "40%",
+        "3/5": "60%",
+        "4/5": "80%",
+        "1/6": "16.166666666%",
+        "5/6": "83.333333333%",
       },
     },
   },
