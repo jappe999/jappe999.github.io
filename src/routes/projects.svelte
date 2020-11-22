@@ -8,6 +8,7 @@
       image: {
         src: "/projects/logo-project-cards.svg",
         alt: "Project Cards logo",
+        fill: true,
       },
       urls: [
         { text: "Website", href: "https://project-cards-v3.herokuapp.com" },
@@ -126,7 +127,8 @@
       {#each projects as project}
         <li class="project">
           <div
-            class="bg-white project__media-wrapper project__media-wrapper--fit">
+            class="bg-white project__media-wrapper"
+            class:project__media-wrapper--fit={project.image.fill}>
             <img src={project.image.src} alt={project.image.alt} />
           </div>
           <div class="project__content">
@@ -135,7 +137,11 @@
 
             <div class="flex flex-wrap justify-end pt-4 mt-auto space-x-2">
               {#each project.urls as url}
-                <a href={url.href} target="_blank" class="project__button">
+                <a
+                  href={url.href}
+                  rel="noreferrer"
+                  target="_blank"
+                  class="project__button">
                   {url.text}
                 </a>
               {/each}
