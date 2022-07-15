@@ -38,7 +38,7 @@
     "postcss": "^7.0.32",
     "postcss-load-config": "^2.1.1",
     "sapper": "^0.27.0",
-    "svelte": "^3.0.0",
+    "svelte": "^3.49.0",
     "svelte-check": "^1.0.5",
     "svelte-loader": "^2.9.0",
     "svelte-preprocess": "^4.1.1",
